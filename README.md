@@ -4,7 +4,7 @@ Ce projet a été réalisé dans le cadre de l'unité d'enseignement Intelligenc
 
 L'objet était premièrement de reproduire les résultats obtenus par Patryk Chrabaszcz, Ilya Loshchilov et Frank Hutter dans l'article _Back to Basics: Benchmarking Canonical Evolution Strategies for Playing Atari_ avec un budget plus limité et des réseaux de neurones de plus petite taille que ceux utilisés par les auteurs. Il s'agissait dans un second temps d'étendre la comparaison OpenAI ES vs CanonicalES à d’autres algorithmes ES tels que CEM ou CMA-ES. Nous avons choisi de tester et comparer ces différents algorithmes sur le jeu Pong et avons obtenu le résultat suivant avec OpenAI ES :
 
-
+![](pong_openai_es.png)
 
 ### Prérequis
 
