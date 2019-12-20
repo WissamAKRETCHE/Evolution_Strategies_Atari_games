@@ -6,7 +6,7 @@ L'objet était premièrement de reproduire les résultats obtenus par Patryk Chr
 
 ### Prérequis
 
-Si vous souhaitez uniquement visualiser le comportement des intelligences artificielles entraînées sur les différents jeux Atari, vous aurez seulement besoin de :
+Si vous souhaitez uniquement visualiser le comportement des intelligences artificielles entraînées sur les différents jeux Atari, vous aurez besoin de :
 
 - Python 3.5
 - tensorflow (version 1.14.0) 
@@ -35,5 +35,48 @@ sudo python3.5 -m pip install gym[atari]
 ```
 
 ### Lancer les tests
+Afin de lancer les différents algorithmes, vous pouvez procéder de la manière suivante:
 
+#### Canonical ES et OpenAI ES
+Placer-vous dans le dossier openai_es_canonical_es et choisissez l'algorithme que voulez tester en modifiant votre fichier de configuration (par exemple ./configurations/sample_configuration.json) en changeant l'attribut "optimizer" à "CanonicalESOptimizer" pour le Canonical ES et "OpenAIOptimizer" pour le OpenAI ES.
+```
+cd openai_es_canonical_es
+```
+Lancez ensuite l'exécution du fichier main.py de la manière suivante:
+```
+python3 main.py -e number_of_episodes_per_cpu -g game -c path_to_configuration_file -r name_of_the_run
+```
+
+#### CMA-ES
+Placez-vous dans le dossier cma_es 
+```
+cd cma_es
+```
+Lancez ensuite l'exécution du fichier RL.py
+```
+python RL.py
+```
+
+
+#### CEM et DQN
+Pour lancer l'un des deux algorithmes, placez-vous dans le dossier dqn_cem
+```
+cd dqn_cem
+```
+Lancez ensuite l'exécution du fichier run.py en spécifiant le mode (train ou test), le jeu, l'agent (dqn ou cem)...
+Ci-dessous un exemple de commande:
+```
+python ./run.py \
+  --mode train \
+  --model dqn_atari \
+  --agent dqn \
+  --game Pong-v0 \
+  --base_dir exp \
+  --save_weight_interval 250000 \
+  --save_log_interval 100 \
+  --max_steps 10000000 \
+  --memory_limit 1000000 \
+  --memory_window_length 4 \
+  --visualize_train true \
+```
 
